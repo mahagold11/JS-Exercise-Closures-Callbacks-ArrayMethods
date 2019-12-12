@@ -69,7 +69,7 @@ function processLength(list,callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(stringList,callback) {
+function processLastItem(stringList, callback) {
   return callback(stringList[stringList.length - 1])
 }
 
@@ -85,7 +85,7 @@ function processLastItem(stringList,callback) {
  * @returns the result of invoking `callback` passing the SUM of all elements in `numberList`.
  * 
  * Examples of usage of this higher-order function:
- * [1] Invoking `processSum` passing `[10, 20, 30]` and `(num) => num + " is a big number!"`,
+ * [1] Invoking `processSum` passing `[10, 20, 30]` and `(num) => num + " is a big number!`,
  * should return "60 is a big number!".
  * 
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
@@ -115,9 +115,11 @@ function processSum(numberList, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  let num = num1 * num2;
+  return callback(num);
 }
+
 
 /**
  * ### Challenge `processContains`
@@ -139,8 +141,14 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+
+// function processContains(item, list, callback) {
+//    let found = list.find(element => element === item);
+//    return callback(found);
+// }
+
+function processContains(item, list, callback) {
+  return callback(list.includes(item))
 }
 
 /**
