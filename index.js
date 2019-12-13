@@ -319,6 +319,7 @@ function tallyUpDonations(runners) {
   return result.reduce((a,b) => a + b, 0)
 }
 
+
 // result.push(item.donation.reduce((a,b) => a + b, 0))
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
@@ -338,9 +339,9 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+  return function () {
+    return count++;
   }
   // BROKEN CODE ENDS
 }
